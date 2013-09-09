@@ -26,7 +26,7 @@ public class ZoneBasedEVCacheTest  extends AbstractEVCacheTest {
             System.setProperty("evcache.pool.provider", "com.netflix.evcache.pool.standalone.ZoneClusteredEVCacheClientPoolImpl");
             System.setProperty("EVCACHE.EVCacheClientPool.zones", "A,B");
             System.setProperty("EVCACHE.A.EVCacheClientPool.hosts",
-                    "ec2-23-22-55-28.compute-1.amazonaws.com:11211,ec2-50-16-48-64.compute-1.amazonaws.com:11211");
+                    "ec2-23-22-55-28.compute-1.amazonaws.com:11211,localhost:11211");
             System.setProperty("EVCACHE.B.EVCacheClientPool.hosts",
                     "ec2-184-73-63-197.compute-1.amazonaws.com:11211,ec2-50-19-26-171.compute-1.amazonaws.com:11211");
             EVCacheClientPoolManager.getInstance().initEVCache("EVCACHE");
