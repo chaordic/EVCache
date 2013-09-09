@@ -26,7 +26,7 @@ public class SimpleEVCacheTest extends AbstractEVCacheTest {
             log.info("Logger intialized");
 
             System.setProperty("evcache.pool.provider", "com.netflix.evcache.pool.standalone.SimpleEVCacheClientPoolImpl");
-            System.setProperty("EVCACHE.EVCacheClientPool.hosts", "ec2-50-16-48-64.compute-1.amazonaws.com:11211");
+            System.setProperty("EVCACHE.EVCacheClientPool.hosts", "localhost:11211");
             log.info("initializing EVCache");
             EVCacheClientPoolManager.getInstance().initEVCache("EVCACHE");
             Thread.sleep(2000);
