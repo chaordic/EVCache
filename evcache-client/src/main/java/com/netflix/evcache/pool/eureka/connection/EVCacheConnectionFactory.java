@@ -22,7 +22,7 @@ import java.util.List;
 
 import net.spy.memcached.BinaryConnectionFactory;
 import net.spy.memcached.DefaultHashAlgorithm;
-import net.spy.memcached.HashAlgorithm;
+import net.spy.memcached.FailureMode;
 import net.spy.memcached.KetamaNodeLocator;
 import net.spy.memcached.MemcachedConnection;
 import net.spy.memcached.MemcachedNode;
@@ -72,5 +72,10 @@ public class EVCacheConnectionFactory extends BinaryConnectionFactory {
         final MemcachedConnection connection = new MemcachedConnection(getReadBufSize(), this, addrs, getInitialObservers(), getFailureMode(), getOperationFactory());
         connection.setName(appName + "-" + zone + "-" + id);
         return connection;
+    }
+    
+    @Override
+    public FailureMode getFailureMode() {
+        return FailureMode.Cancel;
     }
 }
